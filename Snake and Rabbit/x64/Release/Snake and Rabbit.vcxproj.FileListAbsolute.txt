@@ -1,0 +1,2 @@
+C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\x64\Release\Snake and Rabbit.vcxproj.AssemblyReference.cache
+C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\x64\Release\Snake and Rabbit.vcxproj.SuggestedBindingRedirects.cache

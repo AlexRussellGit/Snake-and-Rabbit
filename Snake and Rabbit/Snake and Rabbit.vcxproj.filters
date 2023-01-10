@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{6abd0219-c7d6-4e35-bfd5-1bb5bbff5348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Splash">
+      <UniqueIdentifier>{7ad395e9-6018-4e3a-9dd0-f92bd2f36136}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Menu">
+      <UniqueIdentifier>{1c9fb5a6-abd8-4286-9ee5-e57c097ff29e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Engine">
+      <UniqueIdentifier>{fb4fdae1-8866-4ce9-b48f-cba989986256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Gamplay">
+      <UniqueIdentifier>{7c9d171c-f2c6-46da-9221-8ab06f3daab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Gameover">
+      <UniqueIdentifier>{632997fa-523b-431a-9918-02ba64cd057b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic">
+      <UniqueIdentifier>{d92469e5-5056-4564-97b8-8524fd574086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic\Animal">
+      <UniqueIdentifier>{590899d6-3c59-481c-8783-02d4fa980fd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic\Animal\Snake">
+      <UniqueIdentifier>{3d74217b-e65a-457d-8a23-56838dce0eb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic\Animal\Rabbit">
+      <UniqueIdentifier>{f4d64611-62ca-45bd-a082-56dcf7156f74}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashState.cpp">
+      <Filter>States\Splash</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuState.cpp">
+      <Filter>States\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetManager.cpp">
+      <Filter>Game Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Game Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>Game Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameplayState.cpp">
+      <Filter>States\Gamplay</Filter>
+    </ClCompile>
+    <ClCompile Include="GameoverState.cpp">
+      <Filter>States\Gameover</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
+      <Filter>Game Logic\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Game Logic\Animal\Snake</Filter>
+    </ClCompile>
+    <ClCompile Include="Rabbit.cpp">
+      <Filter>Game Logic\Animal\Rabbit</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DEFENITIONS.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>States\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashState.h">
+      <Filter>States\Splash</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetManager.h">
+      <Filter>Game Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Game Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Game Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Game Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameplayState.h">
+      <Filter>States\Gamplay</Filter>
+    </ClInclude>
+    <ClInclude Include="GameoverState.h">
+      <Filter>States\Gameover</Filter>
+    </ClInclude>
+    <ClInclude Include="Animal.h">
+      <Filter>Game Logic\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>Game Logic\Animal\Snake</Filter>
+    </ClInclude>
+    <ClInclude Include="Rabbit.h">
+      <Filter>Game Logic\Animal\Rabbit</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
