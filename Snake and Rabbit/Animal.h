@@ -11,12 +11,17 @@ namespace SaR
 	{
 	public:
 		Animal(GameDataRef data);
-		void SpawnAnimal();
-		void MoveAnimal(std::string direction, float dt);
-		void DrawAnimals();
+
+		void Spawn();
+		void Direction(sf::Keyboard *key);
+		void Move(float dt);
+		void Draw();
 
 	private:
 		GameDataRef _data;
 		std::vector<sf::Sprite> animalSprites;
+
+		float movebyX = 1;
+		float movebyY = 0;
 	};
 }

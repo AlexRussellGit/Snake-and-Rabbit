@@ -31,6 +31,8 @@ namespace SaR
 
 		GameDataRef _data = std::make_shared<GameData>();
 
+		sf::Image icon = sf::Image{};
+
 		void Run();
 	};
 }

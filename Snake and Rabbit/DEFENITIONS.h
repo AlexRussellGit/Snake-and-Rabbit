@@ -4,7 +4,7 @@
 #define SCREEN_HEIGHT 768
 
 #define SPLASH_STATE_SHOW_TIME 2.0f
-#define SNAKE_MOVEMENTSPEED 3.0f
+#define SNAKE_MOVEMENTSPEED 200.0f//3.0f
 
 #define WINDOW_ICON_FILEPATH "../Resources/images/icon.png"
 

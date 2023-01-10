@@ -8,41 +8,53 @@ namespace SaR
 
 	}
 
-	void Animal::SpawnAnimal()
+	void Animal::Spawn()
 	{
-		sf::Sprite sprite(_data->assets.GetTexture("Snake Head"));
+		sf::Sprite sprite(_data->assets.GetTexture("Animal Head"));
 		sprite.setPosition((_data->window.getSize().x) / 2, (_data->window.getSize().y) / 2);
 		animalSprites.push_back(sprite);
 	}
 
-	void Animal::MoveAnimal(std::string direction, float dt)
+	void Animal::Direction(sf::Keyboard *key)
 	{
-		for (unsigned short int i = 0; i < animalSprites.size(); i++)
+		if (key->isKeyPressed)
 		{
-			sf::Vector2f position = animalSprites.at(i).getPosition();
-			float movement = SNAKE_MOVEMENTSPEED * dt;
-			//animalSprites.at(i).move(movement, 0);
-			if (direction == "right")
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && (movebyX != 0 && movebyY != -1))
 			{
-				animalSprites.at(i).move(movement, 0);
+				movebyX = 0;
+				movebyY = 1;
 			}
-			if (direction == "left")
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && (movebyX != 0 && movebyY != 1))
 			{
-				animalSprites.at(i).move((-movement), 0);
+				movebyX = 0;
+				movebyY = -1;
 			}
-			if (direction == "up")
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && (movebyX != 1 && movebyY != 0))
 			{
-				animalSprites.at(i).move(0, movement);
-
+				movebyX = -1;
+				movebyY = 0;
 			}
-			if (direction == "down")
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && (movebyX != -1 && movebyY != 0))
 			{
-				animalSprites.at(i).move(0, -movement);
+				movebyX = 1;
+				movebyY = 0;
 			}
 		}
 	}
 
-	void Animal::DrawAnimals()
+	void Animal::Move(float dt)
+	{
+		for (unsigned short int i = 0; i < animalSprites.size(); i++)
+		{
+			sf::Vector2f position = animalSprites.at(i).getPosition();
+			float movementDistance = SNAKE_MOVEMENTSPEED * dt;
+			float x = movebyX * movementDistance;
+			float y = movebyY * movementDistance;
+			animalSprites.at(i).move(x, y);
+		}
+	}
+
+	void Animal::Draw()
 	{
 		for (unsigned short int i = 0; i < animalSprites.size(); i++)
 		{

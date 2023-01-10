@@ -9,54 +9,6 @@ C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Animal.cpp(14,50):
           [
               T=unsigned int
           ]
-  AssetManager.cpp
-  Game.cpp
-  GameoverState.cpp
-  GameplayState.cpp
-  InputManager.cpp
-C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\InputManager.cpp(9,135): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\InputManager.cpp(9,103): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\InputManager.cpp(9,75): warning C4244: аргумент: преобразование "const T" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\InputManager.cpp(9,51): warning C4244: аргумент: преобразование "const T" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-  main.cpp
-  MenuState.cpp
-  Rabbit.cpp
-  Snake.cpp
-  SplashState.cpp
-  StateMachine.cpp
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-  Создание кода...
+C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Animal.cpp(20,10): warning C4551: в вызове функции отсутствует список аргументов
   Animal.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Snake and Rabbit.vcxproj -> C:\Users\alexr\source\repos\Snake and Rabbit\x64\Release\Snake and Rabbit.exe

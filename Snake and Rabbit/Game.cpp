@@ -5,7 +5,6 @@ namespace SaR
 {
 	Game::Game(int width, int height, std::string title, std::string logo_file_path)
 	{
-		sf::Image icon = sf::Image{};
 		icon.loadFromFile(logo_file_path);
 
 		_data->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);

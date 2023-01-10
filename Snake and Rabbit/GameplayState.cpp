@@ -12,7 +12,7 @@ namespace SaR
 	void GameplayState::Init()
 	{
 		_data->assets.LoadTexture("Gameplay State Background", GAMEPLAY_BACKGROUND_FILEPATH);
-		_data->assets.LoadTexture("Snake Head", SNAKEHEAD_FILEPATH);
+		_data->assets.LoadTexture("Animal Head", SNAKEHEAD_FILEPATH);
 
 		animal = new Animal( _data );
 
@@ -28,42 +28,23 @@ namespace SaR
 			}
 			if (_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window))
 			{
-				animal->SpawnAnimal();
+				animal->Spawn();
 				std::cout << "animal spawned" << std::endl;
 			}
-			/*if (sf::Keyboard::isKeyPressed)
-			{
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-				{
-					animal->MoveAnimal("up", SNAKE_MOVEMENTSPEED);
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-				{
-					animal->MoveAnimal("down", SNAKE_MOVEMENTSPEED);
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-				{
-					animal->MoveAnimal("ledt", SNAKE_MOVEMENTSPEED);
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-				{
-					animal->MoveAnimal("right", SNAKE_MOVEMENTSPEED);
-				}
-			}*/
-			
+			animal->Direction(key);			
 		}
 	}
 
 	void GameplayState::Update(float dt)
 	{
-		animal->MoveAnimal("down", dt);
+		animal->Move(dt);
 	}
 
 	void GameplayState::Draw(float dt)
 	{
 		_data->window.clear();
 		_data->window.draw(_background);
-		animal->DrawAnimals();
+		animal->Draw();
 		_data->window.display();
 	}
 }
