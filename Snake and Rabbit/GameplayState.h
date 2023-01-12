@@ -4,6 +4,8 @@
 #include "State.h"
 #include "Game.h"
 #include "Animal.h"
+#include "Snake.h"
+#include "Rabbit.h"
 
 namespace SaR
 {

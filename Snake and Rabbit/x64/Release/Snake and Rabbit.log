@@ -1,14 +1,15 @@
-﻿  Animal.cpp
-C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Animal.cpp(14,83): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+﻿  Rabbit.cpp
+C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Rabbit.cpp(20,83): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
           with
           [
               T=unsigned int
           ]
-C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Animal.cpp(14,50): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Rabbit.cpp(20,50): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
           with
           [
               T=unsigned int
           ]
-C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Animal.cpp(20,10): warning C4551: в вызове функции отсутствует список аргументов
-  Animal.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Rabbit.cpp(46,50): warning C4804: <: небезопасное использование типа "bool" в операции
+C:\Users\alexr\source\repos\Snake and Rabbit\Snake and Rabbit\Rabbit.cpp(59,50): warning C4804: <: небезопасное использование типа "bool" в операции
+  AssetManager.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Snake and Rabbit.vcxproj -> C:\Users\alexr\source\repos\Snake and Rabbit\x64\Release\Snake and Rabbit.exe

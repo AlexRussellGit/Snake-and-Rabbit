@@ -116,7 +116,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Animal.cpp" />
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameoverState.cpp" />

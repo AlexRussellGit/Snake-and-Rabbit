@@ -72,9 +72,6 @@
     <ClCompile Include="GameoverState.cpp">
       <Filter>States\Gameover</Filter>
     </ClCompile>
-    <ClCompile Include="Animal.cpp">
-      <Filter>Game Logic\Animal</Filter>
-    </ClCompile>
     <ClCompile Include="Snake.cpp">
       <Filter>Game Logic\Animal\Snake</Filter>
     </ClCompile>
@@ -104,9 +101,6 @@
     <ClInclude Include="StateMachine.h">
       <Filter>Game Engine</Filter>
     </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Game Engine</Filter>
-    </ClInclude>
     <ClInclude Include="GameplayState.h">
       <Filter>States\Gamplay</Filter>
     </ClInclude>
@@ -121,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="Rabbit.h">
       <Filter>Game Logic\Animal\Rabbit</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

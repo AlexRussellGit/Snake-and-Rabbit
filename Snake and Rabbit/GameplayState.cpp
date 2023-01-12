@@ -12,9 +12,9 @@ namespace SaR
 	void GameplayState::Init()
 	{
 		_data->assets.LoadTexture("Gameplay State Background", GAMEPLAY_BACKGROUND_FILEPATH);
-		_data->assets.LoadTexture("Animal Head", SNAKEHEAD_FILEPATH);
+		_data->assets.LoadTexture("Snake Head", SNAKEHEAD_FILEPATH);
 
-		animal = new Animal( _data );
+		animal = new Rabbit( _data );
 
 		_background.setTexture(this->_data->assets.GetTexture("Gameplay State Background"));
 	}
@@ -31,7 +31,7 @@ namespace SaR
 				animal->Spawn();
 				std::cout << "animal spawned" << std::endl;
 			}
-			animal->Direction(key);			
+			//animal->SetDirection(key);	
 		}
 	}
 

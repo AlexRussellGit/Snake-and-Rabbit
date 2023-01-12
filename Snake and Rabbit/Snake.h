@@ -8,17 +8,22 @@
 
 namespace SaR
 {
-	class Snake 
+	class Snake : public Animal
 	{
 	public:
 		Snake(GameDataRef data);
 		
 		void Spawn();
-		void Move(std::string direction, float dt);
+		void SetDirection(sf::Keyboard* key);
+		void RandDirection() {};
+		void Move(float dt);
 		void Draw();
 
 	private:
 		GameDataRef _data;
-		std::vector<sf::Sprite> animalSprites;
+		std::vector<sf::Sprite> snakeSprites;
+
+		float movebyX = 1;
+		float movebyY = 0;
 	};
 }
