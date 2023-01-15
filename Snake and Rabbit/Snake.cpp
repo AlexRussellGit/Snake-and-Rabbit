@@ -12,9 +12,8 @@ namespace SaR
 
 	void Snake::Spawn()
 	{
-		sf::Sprite sprite(_data->assets.GetTexture("Snake Head"));
-		sprite.setPosition((_data->window.getSize().x) / 2, (_data->window.getSize().y) / 2);
-		snakeSprites.push_back(sprite);
+		snakeSprite.setTexture(_data->assets.GetTexture("Snake Head"));
+		snakeSprite.setPosition((_data->window.getSize().x) / 2, (_data->window.getSize().y) / 2);
 	}
 
 	void Snake::SetDirection(sf::Keyboard* key)
@@ -44,23 +43,24 @@ namespace SaR
 		}
 	}
 
+	bool Snake::SustainAlive()
+	{
+		if (snakeSprite.getPosition().x >= 0 && snakeSprite.getPosition().x <= (_data->window.getSize().x - (snakeSprite.getGlobalBounds().width)) && snakeSprite.getPosition().y >= 0 && snakeSprite.getPosition().y <= (_data->window.getSize().y - (snakeSprite.getGlobalBounds().height)))
+			return true;
+		return false;
+	}
+
 	void Snake::Move(float dt)
 	{
-		for (unsigned short int i = 0; i < snakeSprites.size(); i++)
-		{
-			sf::Vector2f position = snakeSprites.at(i).getPosition();
-			float movementDistance = SNAKE_MOVEMENTSPEED * dt;
-			float x = movebyX * movementDistance;
-			float y = movebyY * movementDistance;
-			snakeSprites.at(i).move(x, y);
-		}
+		sf::Vector2f position = snakeSprite.getPosition();
+		float movementDistance = SNAKE_MOVEMENTSPEED * dt;
+		float x = movebyX * movementDistance;
+		float y = movebyY * movementDistance;
+		snakeSprite.move(x, y);
 	}
 
 	void Snake::Draw()
 	{
-		for (unsigned short int i = 0; i < snakeSprites.size(); i++)
-		{
-			_data->window.draw(snakeSprites.at(i));
-		}
+		_data->window.draw(snakeSprite);
 	}
 }

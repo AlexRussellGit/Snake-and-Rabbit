@@ -15,13 +15,14 @@ namespace SaR
 		
 		void Spawn();
 		void SetDirection(sf::Keyboard* key);
-		void RandDirection() {};
+		void RandDirection(int range) {};
+		bool SustainAlive();
 		void Move(float dt);
 		void Draw();
 
 	private:
 		GameDataRef _data;
-		std::vector<sf::Sprite> snakeSprites;
+		sf::Sprite snakeSprite;
 
 		float movebyX = 1;
 		float movebyY = 0;

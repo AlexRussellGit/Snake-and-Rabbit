@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "GameoverState.h"
 #include "State.h"
 #include "Game.h"
 #include "Animal.h"
@@ -23,6 +24,7 @@ namespace SaR
 		sf::Sprite _background;
 		
 		sf::Keyboard* key;
-		Animal* animal;
+		Animal* aRabbit;
+		Animal* aSnake;
 	};
 }

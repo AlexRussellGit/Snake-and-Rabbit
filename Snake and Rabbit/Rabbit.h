@@ -16,7 +16,8 @@ namespace SaR
 
 		void Spawn();
 		void SetDirection(sf::Keyboard* key) {};
-		void RandDirection();
+		void RandDirection(int range);
+		bool SustainAlive() { return true; };
 		void Move(float dt);
 		void Draw();
 

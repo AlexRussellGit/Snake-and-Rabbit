@@ -16,7 +16,8 @@ namespace SaR
 		void Draw(float dt);
 	private:
 		GameDataRef _data;
-		sf::Clock _clock;
+		//sf::Clock _clock;
 		sf::Sprite _background;
+		sf::Sprite _title;
 	};
 }

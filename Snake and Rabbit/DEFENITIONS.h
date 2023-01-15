@@ -14,6 +14,9 @@
 #define GAMEOVER_BACKGROUND_FILEPATH "../Resources/images/gameover_backround.png"
 
 #define SNAKEHEAD_FILEPATH "../Resources/images/snakehead.png"
+#define RABBIT_FILEPATH "../Resources/images/rabbit.png"
 
 #define GAME_TITLE_FILEPATH "../Resources/images/title.png"
 #define PLAY_BUTTON_FILEPATH "../Resources/images/playbutton.png"
+
+#define GAMEOVER_TITLE_FILEPATH "../Resources/images/gameoversign.png"

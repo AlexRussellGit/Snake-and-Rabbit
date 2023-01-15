@@ -16,34 +16,20 @@ namespace SaR
 
 	void Rabbit::Spawn()
 	{
-		sf::Sprite sprite(_data->assets.GetTexture("Snake Head"));
+		sf::Sprite sprite(_data->assets.GetTexture("Rabbit"));
 		sprite.setPosition((_data->window.getSize().x) / 2, (_data->window.getSize().y) / 2);
 		rabbitSprites.push_back(sprite);
 	}
 
-	void Rabbit::RandDirection()
+	void Rabbit::RandDirection(int range)
 	{
-		//srand(time(0));
-		//int binar_arr[] = {-1, 1};
-
-		/*srand(time(NULL));
-		std::cout << rand() << std::endl;*/
-
-		//int changeDirection = rand() % 100;
-		
 		int changeDirection = rand() % 100;
 
-		/*if (changeDirection < 50)
-		{
-			movebyX = (int)(movebyX - (2 * movebyX));
-			movebyY = (int)(movebyY - (2 * movebyY));
-		}*/
-
-		if (changeDirection >= 69 && changeDirection < 99)
+		if (changeDirection < (int)(range * 0.8))
 		{
 			if (movebyY == 0)
 			{
-				if (changeDirection >= 69 && changeDirection < changeDirection < 82)
+				if (changeDirection < (int)(range * 0.4))
 				{
 					movebyY = movebyY - movebyX;
 					movebyX = 0;
@@ -56,7 +42,7 @@ namespace SaR
 			}
 			else if(movebyX == 0)
 			{
-				if (changeDirection >= 69 && changeDirection < changeDirection < 82)
+				if (changeDirection < (int)(range * 0.4))
 				{
 					movebyX = movebyX - movebyY;
 					movebyY = 0;
@@ -68,7 +54,7 @@ namespace SaR
 				}
 			}
 		}
-		else if (changeDirection == 99) // 99
+		else if (changeDirection < range) // 99
 		{
 			movebyX = movebyX - (2 * movebyX);
 			movebyY = movebyY - (2 * movebyY);
@@ -78,7 +64,7 @@ namespace SaR
 
 	void Rabbit::Move(float dt)
 	{
-		RandDirection();
+		RandDirection(3);
 		for (unsigned short int i = 0; i < rabbitSprites.size(); i++)
 		{
 			sf::Vector2f position = rabbitSprites.at(i).getPosition();

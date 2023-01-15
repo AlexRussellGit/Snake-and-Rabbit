@@ -2,6 +2,9 @@
 #include "GameplayState.h"
 #include "DEFENITIONS.h"
 
+#define SNAKE_TEST true
+#define RABBIT_TEST false
+
 namespace SaR
 {
 	GameplayState::GameplayState(GameDataRef data) : _data(data)
@@ -12,10 +15,14 @@ namespace SaR
 	void GameplayState::Init()
 	{
 		_data->assets.LoadTexture("Gameplay State Background", GAMEPLAY_BACKGROUND_FILEPATH);
+#if (RABBIT_TEST)
+		_data->assets.LoadTexture("Rabbit", RABBIT_FILEPATH);
+		aRabbit = new Rabbit(_data);
+#endif
+#if (SNAKE_TEST)
 		_data->assets.LoadTexture("Snake Head", SNAKEHEAD_FILEPATH);
-
-		animal = new Rabbit( _data );
-
+		aSnake = new Snake(_data);
+#endif
 		_background.setTexture(this->_data->assets.GetTexture("Gameplay State Background"));
 	}
 
@@ -28,23 +35,44 @@ namespace SaR
 			}
 			if (_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window))
 			{
-				animal->Spawn();
-				std::cout << "animal spawned" << std::endl;
+#if (RABBIT_TEST)
+				aRabbit->Spawn();
+#endif
+#if (SNAKE_TEST)
+				aSnake->Spawn();
+#endif
+				std::cout << "animals spawned" << std::endl;
 			}
-			//animal->SetDirection(key);	
+#if (SNAKE_TEST)
+			aSnake->SetDirection(key);	
+#endif
 		}
 	}
 
 	void GameplayState::Update(float dt)
 	{
-		animal->Move(dt);
+#if (RABBIT_TEST)
+		aRabbit->Move(dt);
+#endif
+#if (SNAKE_TEST)
+		if (!(aSnake->SustainAlive()))
+		{
+			_data->machine.AddState(StateRef(new GameoverState(_data)), true);
+		}
+		aSnake->Move(dt);
+#endif
 	}
 
 	void GameplayState::Draw(float dt)
 	{
 		_data->window.clear();
 		_data->window.draw(_background);
-		animal->Draw();
+#if (RABBIT_TEST)
+		aRabbit->Draw();
+#endif
+#if (SNAKE_TEST)
+		aSnake->Draw();
+#endif
 		_data->window.display();
 	}
 }
