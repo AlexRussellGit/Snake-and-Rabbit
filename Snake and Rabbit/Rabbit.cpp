@@ -16,16 +16,15 @@ namespace SaR
 
 	void Rabbit::Spawn()
 	{
-		sf::Sprite sprite(_data->assets.GetTexture("Rabbit"));
-		sprite.setPosition((_data->window.getSize().x) / 2, (_data->window.getSize().y) / 2);
-		rabbitSprites.push_back(sprite);
+		rabbitSprite.setTexture(_data->assets.GetTexture("Rabbit"));
+		rabbitSprite.setPosition( rand() % (int)(_data->window.getSize().x - rabbitSprite.getGlobalBounds().width ), rand() % (int)(_data->window.getSize().y - rabbitSprite.getGlobalBounds().height));
 	}
 
 	void Rabbit::RandDirection(int range)
 	{
 		int changeDirection = rand() % 100;
 
-		if (changeDirection < (int)(range * 0.8))
+		if (changeDirection <= (int)(range * 0.8) && !(range > 100))
 		{
 			if (movebyY == 0)
 			{
@@ -54,7 +53,7 @@ namespace SaR
 				}
 			}
 		}
-		else if (changeDirection < range) // 99
+		else if (changeDirection < range || range > 100) 
 		{
 			movebyX = movebyX - (2 * movebyX);
 			movebyY = movebyY - (2 * movebyY);
@@ -62,24 +61,32 @@ namespace SaR
 
 	}
 
+	sf::Vector2f Rabbit::GetPosition()
+	{
+		return rabbitSprite.getPosition();
+	}
+
 	void Rabbit::Move(float dt)
 	{
-		RandDirection(3);
-		for (unsigned short int i = 0; i < rabbitSprites.size(); i++)
+		if (rabbitSprite.getPosition().x <= 0 ||
+			rabbitSprite.getPosition().x >= _data->window.getSize().x - rabbitSprite.getGlobalBounds().width ||
+			rabbitSprite.getPosition().y <= 0 ||
+			rabbitSprite.getPosition().y >= _data->window.getSize().y - rabbitSprite.getGlobalBounds().height)
 		{
-			sf::Vector2f position = rabbitSprites.at(i).getPosition();
-			float movementDistance = SNAKE_MOVEMENTSPEED * dt;
-			float x = movebyX * movementDistance;
-			float y = movebyY * movementDistance;
-			rabbitSprites.at(i).move(x, y);
+			RandDirection(101);
 		}
+		else
+		{
+			RandDirection(5);
+		}
+		float movementDistance = SNAKE_MOVEMENTSPEED * dt;
+		float x = movebyX * movementDistance;
+		float y = movebyY * movementDistance;
+		rabbitSprite.move(x, y);
 	}
 
 	void Rabbit::Draw()
 	{
-		for (unsigned short int i = 0; i < rabbitSprites.size(); i++)
-		{
-			_data->window.draw(rabbitSprites.at(i));
-		}
+			_data->window.draw(rabbitSprite);
 	}
 }

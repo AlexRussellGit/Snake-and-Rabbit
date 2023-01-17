@@ -50,6 +50,11 @@ namespace SaR
 		return false;
 	}
 
+	sf::Vector2f Snake::GetPosition()
+	{
+		return snakeSprite.getPosition();
+	}
+
 	void Snake::Move(float dt)
 	{
 		sf::Vector2f position = snakeSprite.getPosition();

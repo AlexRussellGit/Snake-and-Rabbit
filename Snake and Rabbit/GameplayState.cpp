@@ -3,7 +3,7 @@
 #include "DEFENITIONS.h"
 
 #define SNAKE_TEST true
-#define RABBIT_TEST false
+#define RABBIT_TEST true
 
 namespace SaR
 {
@@ -18,12 +18,15 @@ namespace SaR
 #if (RABBIT_TEST)
 		_data->assets.LoadTexture("Rabbit", RABBIT_FILEPATH);
 		aRabbit = new Rabbit(_data);
+		aRabbit->Spawn();
 #endif
 #if (SNAKE_TEST)
 		_data->assets.LoadTexture("Snake Head", SNAKEHEAD_FILEPATH);
 		aSnake = new Snake(_data);
+		aSnake->Spawn();
 #endif
 		_background.setTexture(this->_data->assets.GetTexture("Gameplay State Background"));
+		std::cout << "animals spawned" << std::endl;
 	}
 
 	void GameplayState::HandleInput()
@@ -32,16 +35,6 @@ namespace SaR
 		while (_data->window.pollEvent(event)) {
 			if (sf::Event::Closed == event.type) {
 				_data->window.close();
-			}
-			if (_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window))
-			{
-#if (RABBIT_TEST)
-				aRabbit->Spawn();
-#endif
-#if (SNAKE_TEST)
-				aSnake->Spawn();
-#endif
-				std::cout << "animals spawned" << std::endl;
 			}
 #if (SNAKE_TEST)
 			aSnake->SetDirection(key);	
@@ -54,7 +47,12 @@ namespace SaR
 #if (RABBIT_TEST)
 		aRabbit->Move(dt);
 #endif
-#if (SNAKE_TEST)
+#if (SNAKE_TEST && RABBIT_TEST)
+
+		if (AnimalCollusion(aSnake, aRabbit))
+		{
+			std::cout << "true" << std::endl;
+		}
 		if (!(aSnake->SustainAlive()))
 		{
 			_data->machine.AddState(StateRef(new GameoverState(_data)), true);
@@ -75,4 +73,18 @@ namespace SaR
 #endif
 		_data->window.display();
 	}
+
+	bool GameplayState::AnimalCollusion(Animal *animal1, Animal *animal2)
+	{
+		if (animal1->GetPosition().x >= animal2->GetPosition().x - 48 && 
+			animal1->GetPosition().x <= animal2->GetPosition().x + 48 &&
+			animal1->GetPosition().y >= animal2->GetPosition().y - 48 &&
+			animal1->GetPosition().y <= animal2->GetPosition().y + 48)
+		{
+			animal2->Spawn();
+			return true;
+		}
+		return false;
+	}
+
 }

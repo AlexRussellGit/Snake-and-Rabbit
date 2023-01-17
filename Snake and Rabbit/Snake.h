@@ -17,6 +17,7 @@ namespace SaR
 		void SetDirection(sf::Keyboard* key);
 		void RandDirection(int range) {};
 		bool SustainAlive();
+		sf::Vector2f GetPosition();
 		void Move(float dt);
 		void Draw();
 
